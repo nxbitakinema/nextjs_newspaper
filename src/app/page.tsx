@@ -1,4 +1,12 @@
+import Hero from "@/sections/Hero";
+import Posts from "@/sections/Posts";
+
 export default function Home() {
 
-      return <h1>Newspaper home page</h1>
+      return(
+            <main id="main">
+                  <Hero />
+                  <Posts />
+            </main>
+      )
 }

@@ -1,16 +1,14 @@
+import "bootstrap/dist/css/bootstrap.css";  // bootstrap
+import "bootstrap-icons/font/bootstrap-icons.css";  // bootstrap icons
+import "aos/dist/aos.css";  // aos css
+import Header from "@/components/Header";  // header
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
+import "./variables.css";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const ebGaramond = EB_Garamond({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "newspaper",
@@ -23,11 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body className={ebGaramond.className}>
+
+        <Header />
+
+        {children}
+        
+      </body>
     </html>
   );
 }
